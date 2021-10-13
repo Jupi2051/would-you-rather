@@ -1,8 +1,15 @@
+:root
+{
+  --BackgroundColor: #000000;
+  --FundamentalPrimary: #a31645;
+  --FundamentalSeconary: #C21858;
+  --TextPrimaryColor: #FFFFFF;
+}
+
 .MainTitle
 {
   text-align: center;
   font-family: 'Ubuntu';
   font-size: 3em;
-  color: whitesmoke;
+  color: var(--TextPrimaryColor);
 }
-

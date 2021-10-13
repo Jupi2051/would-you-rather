@@ -10,7 +10,7 @@ function App()
   return (
     <div>
         <p className="MainTitle">Would You Rather!</p>
-        <LoginPanel />
+        <NewQuestion />
     </div>
   );
 }

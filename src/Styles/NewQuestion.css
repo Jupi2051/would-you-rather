@@ -1,0 +1,56 @@
+h2, label
+{
+  color: var(--TextPrimaryColor);
+}
+
+label
+{
+  font-size: 1.2em;
+}
+
+.ORtext
+{
+  color: var(--TextPrimaryColor);
+  font-size: 2em;
+}
+
+.ChoiceFilling
+{
+  width: 70%;
+  height: 50px;
+  border: solid gray 3px;
+  border-radius: 5px;
+  resize: none;
+}
+
+.Button
+{
+  transition-duration: 0.4s;
+  background-color: var(--FundamentalSeconary);
+  color: var(--TextPrimaryColor);
+  border-color: var(--FundamentalSeconary);
+  border-radius: 20px;
+  border-width: 200%;
+  font-family: 'Menlo';
+  font-size: 1.3em;
+  padding: 10px 15%
+}
+
+.Button:hover
+{
+  background-color: var(--FundamentalPrimary);
+  color: var(--TextPrimaryColor);
+  border-color: var(--FundamentalPrimary);
+  border-radius: 20px;
+  border-width: 200%;
+  font-family: 'Menlo';
+  font-size: 1.3em;
+  padding: 10px 15%
+}
+
+.Center
+{
+  margin: auto;
+  text-align: center;
+  width: 50%;
+}

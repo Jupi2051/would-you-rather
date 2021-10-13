@@ -12,7 +12,6 @@ class LoginPanel extends Component
                         <option value="User2"/>
                         <option value="User3"/>
                     </select>
-                    <br/>
                     <button>Log In</button>
                 </form>
             </div>

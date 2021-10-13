@@ -1,19 +1,20 @@
 import React, { Component } from "react";
+import "../Styles/NewQuestion.css"
 
 class NewQuestion extends Component
 {
     render()
     {
         return(
-            <div>
+            <div className="Center">
                 <h2>Create a new Poll</h2>
                 <form>
-                    <label>First Choice:</label><br/>
-                    <textarea maxLength={100} />
-                    <p>OR</p>
-                    <label>Second Choice:</label><br/>
-                    <textarea maxLength={100} /> <br/> <br/>
-                    <button>Submit</button>
+                    <label>First Choice</label> <br/> <br/>
+                    <textarea className="ChoiceFilling" maxLength={100} />
+                    <p className="ORtext">OR</p>
+                    <label>Second Choice</label> <br/> <br/>
+                    <textarea className="ChoiceFilling" maxLength={100} /> <br/> <br/>
+                    <button className="Button">Submit</button>
                 </form>
             </div>
         );
