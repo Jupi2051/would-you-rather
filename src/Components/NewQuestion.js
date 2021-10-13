@@ -6,12 +6,13 @@ class NewQuestion extends Component
     {
         return(
             <div>
+                <h2>Create a new Poll</h2>
                 <form>
-                    <label for="firstchoice">First Choice:</label><br/>
-                    <input type="text" id ="firstchoice"></input><br/>
+                    <label>First Choice:</label><br/>
+                    <textarea maxLength={100} />
                     <p>OR</p>
-                    <label for="secondchoice">Second Choice:</label><br/>
-                    <input type="text" id ="firstchoice"></input><br/><br/>
+                    <label>Second Choice:</label><br/>
+                    <textarea maxLength={100} /> <br/> <br/>
                     <button>Submit</button>
                 </form>
             </div>
