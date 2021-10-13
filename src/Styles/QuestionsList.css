@@ -1,0 +1,36 @@
+.TabMain
+{
+    justify-content: center;
+    margin: auto;
+    overflow: auto;
+    width: fit-content;
+    align-items: center;
+}
+
+.QuestionsContainers
+{
+    border-color: var(--FundamentalPrimary);
+    border-width: 5px;
+    border-style: solid;
+    padding: 0%;
+    margin: 0%;
+    text-align: center;
+    align-items: center;
+}
+
+.TabButton
+{
+    margin: 0%;
+    padding-right: 0px;
+    transition-duration: 0.4s;
+    background-color: var(--FundamentalPrimary);
+    color: var(--TextPrimaryColor);
+    border-color: var(--FundamentalSeconary);
+    border-top-left-radius: 23px;
+    border-top-right-radius: 23px;
+    font-family: 'Ubuntu';
+    font-size: 1em;
+    cursor: pointer;
+    display: inline-flex;
+    box-sizing: border-box;
+}

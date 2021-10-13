@@ -7,7 +7,7 @@ class NewQuestion extends Component
     {
         return(
             <div className="Center">
-                <h2>Create a new Poll</h2>
+                <h1>Create a new Poll</h1>
                 <form>
                     <label>First Choice</label> <br/> <br/>
                     <textarea className="ChoiceFilling" maxLength={100} />
