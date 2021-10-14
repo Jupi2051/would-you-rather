@@ -3,22 +3,19 @@ import NewQuestion from './Components/NewQuestion';
 import QuestionsList from "./Components/QuestionsList";
 import AnswerableQuestion from './Components/AnswerableQuestion';
 import Leaderboard from './Components/Leaderboard';
+import LoginPanel from "./Components/LoginPanel"
 
 function App()
 {
   return (
     <div>
         <p className="MainTitle">Would You Rather!</p>
+
+        <LoginPanel />
         <NewQuestion />
-        <br/>
-        <br/>
-        <QuestionsList />
-        <br/>
-        <br/>
-        <Leaderboard />
-        <br/>
-        <br/>
         <AnswerableQuestion />
+        <Leaderboard />
+        <QuestionsList />
     </div>
   );
 }

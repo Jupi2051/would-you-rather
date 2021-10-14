@@ -1,0 +1,55 @@
+.LoginPanel
+{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.UserSelect
+{
+    display: block;
+    width: 70%;
+    margin: 5% auto;
+    border-radius: 10%;
+    padding: 1%;
+    font-size: 2em;
+}
+
+.LoginPanel h1
+{
+    display: block;
+    text-align: center;
+    color: var(--TextPrimaryColor);
+}
+
+.LoginButton
+{
+    display: block;
+    margin: 0 auto;
+    transition-duration: 0.1s;
+    background-color: var(--FundamentalSeconary);
+    color: var(--TextPrimaryColor);
+    border-color: var(--FundamentalSeconary);
+    border-radius: 20px;
+    border-width: 200%;
+    font-family: 'Menlo';
+    font-size: 1.3em;
+    padding: 10px 15%;
+    cursor: pointer;
+}
+
+.LoginButton:hover
+{
+    display: block;
+    margin: 0 auto;
+    transition-duration: 0.1s;
+    background-color: var(--FundamentalPriamry);
+    color: var(--TextPrimaryColor);
+    border-color: var(--FundamentalPriamry);
+    border-radius: 20px;
+    border-width: 200%;
+    font-family: 'Menlo';
+    font-size: 1.3em;
+    padding: 10px 15%;
+    cursor: pointer;
+}
