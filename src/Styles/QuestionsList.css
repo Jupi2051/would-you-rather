@@ -1,10 +1,8 @@
 .TabMain
 {
-    justify-content: center;
     margin: auto;
     overflow: auto;
     width: fit-content;
-    align-items: center;
 }
 
 .QuestionsContainers
@@ -14,14 +12,15 @@
     border-style: solid;
     padding: 0%;
     margin: 0%;
-    text-align: center;
-    align-items: center;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
 }
 
 .TabButton
 {
     margin: 0%;
-    padding-right: 0px;
+    padding-right: 10px;
+    padding-left: 10px;
     transition-duration: 0.4s;
     background-color: var(--FundamentalPrimary);
     color: var(--TextPrimaryColor);
@@ -33,4 +32,12 @@
     cursor: pointer;
     display: inline-flex;
     box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+}
+
+.TabContainer
+{
+    align-items: center;
+    text-align: center;
 }
