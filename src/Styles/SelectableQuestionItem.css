@@ -2,11 +2,13 @@
 {
     padding-top: 7%;
     display: flex;
-    border: gray 1px solid;
-    border-right: none;
-    border-left: none;
+    border-top-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+    border-bottom-left-radius: 30%;
+    border-top-right-radius: 30%;
     margin-top: 5%;
-    margin-bottom: 5%;
+    padding-bottom: 7%;
+    background: var(--BackgroundColor);
 }
 
 .AskerData
@@ -15,6 +17,7 @@
     width: 40%;
     padding-right: 5px;
     padding-left: 5px;
+    padding-bottom: 5px;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -55,6 +58,22 @@
     background-color: var(--FundamentalSeconary);
     color: var(--TextPrimaryColor);
     border-color: var(--FundamentalSeconary);
+    border-radius: 20px;
+    font-family: 'Menlo';
+    font-size: 1em;
+    padding: 2% 15%;
+    cursor: pointer;
+}
+
+.QuestionViewButton:hover
+{
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    transition-duration: 0.4s;
+    background-color: var(--FundamentalPrimary);
+    color: var(--TextPrimaryColor);
+    border-color: var(--FundamentalPrimary);
     border-radius: 20px;
     font-family: 'Menlo';
     font-size: 1em;

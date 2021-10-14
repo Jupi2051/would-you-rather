@@ -1,9 +1,15 @@
 :root
 {
-  --BackgroundColor: #000000;
+  --BackgroundColor: rgb(30,30,30);;
   --FundamentalPrimary: #a31645;
   --FundamentalSeconary: #C21858;
   --TextPrimaryColor: #FFFFFF;
+
+  --FirstOptionExternal: #810725;
+  --FirstOptionInternal: #9F0E31;
+  
+  --SecondOptionExternal: #650006;
+  --SecondOptionInternal: #820000;
 }
 
 .MainTitle

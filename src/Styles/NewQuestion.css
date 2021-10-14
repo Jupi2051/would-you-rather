@@ -25,7 +25,7 @@ label
 
 .Button
 {
-  transition-duration: 0.4s;
+  transition-duration: 0.1s;
   background-color: var(--FundamentalSeconary);
   color: var(--TextPrimaryColor);
   border-color: var(--FundamentalSeconary);

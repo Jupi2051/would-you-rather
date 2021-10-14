@@ -9,7 +9,7 @@ class SelectableQuestionItem extends Component
             <div>
                 <div className="QuestionCard">
                     <div className="AskerData">
-                        <img src="https://www.oniverse.xyz/imgs/Jupi.jpg" alt="User Profile Picture" className="question-asker-pfp"/>
+                        <img src="https://www.oniverse.xyz/imgs/Jupi.jpg" alt="" className="question-asker-pfp"/>
                         <h3>Someone's Name</h3>
                     </div>
 

@@ -1,0 +1,122 @@
+.AnswerableQuestion
+{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.FirstChoice
+{
+    color: var(--TextPrimaryColor);
+    font: "Ubuntu" bold;
+    font-size: 2em;
+    transition-duration: 1s;
+    background: var(--FirstOptionInternal);
+    border: var(--FirstOptionExternal) solid 10px;
+    padding: 1%;
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+    cursor: pointer;
+    word-wrap:break-word; white-space: normal; overflow-wrap: break-word;
+}
+
+.SecondChoice
+{
+    color: var(--TextPrimaryColor);
+    font: "Ubuntu" bold;
+    font-size: 2em;
+    transition-duration: 1s;
+    background: var(--SecondOptionInternal);
+    border: var(--SecondOptionExternal) solid 10px;
+    padding: 1%;
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+    cursor: pointer;
+    word-wrap:break-word; white-space: normal; overflow-wrap: break-word;
+}
+
+.or-text
+{
+    margin: 1%;
+    color: var(--TextPrimaryColor);
+    font-size: 2em;
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.QuestionInfoContainer
+{
+    max-width: 40%;
+    min-width: 40%;
+
+    /*border: var(--FirstOptionInternal) 5px solid;
+    border-top-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+    border-top-right-radius: 20%;
+    border-bottom-left-radius: 20%;*/
+
+    display: flex;
+    margin: 3% auto;
+}
+
+.question-asker-pfp-on-answer
+{
+    border: var(--FundamentalSeconary) 3px solid;
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    flex: 0;
+}
+
+.QuestionWriterName
+{
+    color: var(--TextPrimaryColor);
+    margin: 0.5%;
+}
+
+.QuestionInfoContainer h5
+{
+    margin: 0.5%;
+    color: var(--TextPrimaryColor);
+}
+
+.AnswerableQuestionButton
+{
+    transition-duration: 0.1s;
+    background-color: var(--FundamentalSeconary);
+    color: var(--TextPrimaryColor);
+    border-color: var(--FundamentalSeconary);
+    border-radius: 20px;
+    border-width: 200%;
+    font-family: 'Menlo';
+    font-size: 1.3em;
+    padding: 10px 5%;
+    margin: 20px auto;
+    display: block;
+    cursor: pointer;
+}
+
+.AnswerableQuestionButton:hover
+{
+  background-color: var(--FundamentalPrimary);
+  color: var(--TextPrimaryColor);
+  border-color: var(--FundamentalPrimary);
+  border-radius: 20px;
+  border-width: 200%;
+  font-family: 'Menlo';
+  font-size: 1.3em;
+  margin: 20px auto;
+  display: block;
+  padding: 10px 5%
+}
+
+
+.QuestionTextDataContainer
+{
+    flex: 1;
+}

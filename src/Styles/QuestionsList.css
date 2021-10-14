@@ -7,11 +7,14 @@
 
 .QuestionsContainers
 {
+    background: var(--FundamentalPrimary);
     border-color: var(--FundamentalPrimary);
     border-width: 5px;
     border-style: solid;
     padding: 0%;
     margin: 0%;
+    border-top-right-radius: 5%;
+    border-top-left-radius: 5%;
     border-bottom-left-radius: 5%;
     border-bottom-right-radius: 5%;
 }
@@ -21,7 +24,7 @@
     margin: 0%;
     padding-right: 10px;
     padding-left: 10px;
-    transition-duration: 0.4s;
+    transition-duration: 0.1s;
     background-color: var(--FundamentalPrimary);
     color: var(--TextPrimaryColor);
     border-color: var(--FundamentalSeconary);
