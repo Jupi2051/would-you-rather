@@ -12,12 +12,12 @@ class QuestionsList extends Component
                     <button className="TabButton">Unanswered Questions</button>
                     <button className="TabButton">Answered Questions</button>
                 </div>
-                <div className="QuestionsContainers">
+                <ul className="QuestionsContainers">
                     <SelectableQuestionItem />
                     <SelectableQuestionItem />
                     <SelectableQuestionItem />
                     <SelectableQuestionItem />
-                </div>
+                </ul>
             </div>
         );
     }

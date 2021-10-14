@@ -6,9 +6,13 @@ class Leaderboard extends Component
     render()
     {
         return(
-            <ul>
-                <LeaderboardItem />
-            </ul>
+            <div className="TabMain">
+                <ul className="QuestionsContainers">
+                    <LeaderboardItem />
+                    <LeaderboardItem />
+                    <LeaderboardItem />
+                </ul>
+            </div>
         );
     }
 }

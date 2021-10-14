@@ -6,7 +6,7 @@ class SelectableQuestionItem extends Component
     render()
     {
         return(
-            <div>
+            <li>
                 <div className="QuestionCard">
                     <div className="AskerData">
                         <img src="https://www.oniverse.xyz/imgs/Jupi.jpg" alt="" className="question-asker-pfp"/>
@@ -14,11 +14,11 @@ class SelectableQuestionItem extends Component
                     </div>
 
                     <div className="QuestionData">
-                        <h3>feap[fka[</h3>
+                        <h3>Question Title</h3>
                         <button className="QuestionViewButton">View Poll</button>
                     </div>
                 </div>
-            </div>
+            </li>
         );
     }
 }
