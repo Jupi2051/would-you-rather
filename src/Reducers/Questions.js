@@ -2,7 +2,7 @@ import { RECEIVED_QUESTIONS } from "../actions/Questions";
 
 export default function Questions(state = {}, action)
 {
-    if (action === RECEIVED_QUESTIONS)
+    if (action.type === RECEIVED_QUESTIONS)
     {
         return {
             ...state,

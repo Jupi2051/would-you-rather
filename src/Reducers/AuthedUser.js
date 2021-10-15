@@ -2,7 +2,7 @@ import { AUTHENTICATE_USER } from "../actions/AuthedUser";
 
 export default function authenticatedUser(state = null, action)
 {
-    if (action === AUTHENTICATE_USER)
+    if (action.type === AUTHENTICATE_USER)
     {
         return {
             ...state,
