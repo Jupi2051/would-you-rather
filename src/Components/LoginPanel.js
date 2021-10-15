@@ -17,16 +17,18 @@ class LoginPanel extends Component
                 <form onSubmit={(event) =>
                 {
                     event.preventDefault();
-                    this.props.dispatch(authenticateUser(this.state.submittedId)); // dispatch log in here
+                    if (this.state.submittedId !== "")
+                        this.props.dispatch(authenticateUser(this.state.submittedId));
                 }}>
                     <select name="userID" className="UserSelect" onChange={(e) => this.setState({submittedId: e.target.value})}>
+                        <option value="" disabled selected hidden>Select a Username</option>
                         {
                             this.props.userIds.map((id) =>
                                 <option key={id} value={id}>{this.props.users[id].name}</option>
                             )
                         }
                     </select>
-                    <button className="LoginButton" type="submit">Log In</button>
+                    <button className={this.props.userIds.length === 0? "DisabledLoginButton":"LoginButton"} type="submit">Log In</button>
                 </form>
             </div>
         );

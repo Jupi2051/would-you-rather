@@ -43,13 +43,29 @@
     display: block;
     margin: 0 auto;
     transition-duration: 0.1s;
-    background-color: var(--FundamentalPriamry);
+    background-color: var(--FundamentalPrimary);
     color: var(--TextPrimaryColor);
-    border-color: var(--FundamentalPriamry);
+    border-color: var(--FundamentalPrimary);
     border-radius: 20px;
     border-width: 200%;
     font-family: 'Menlo';
     font-size: 1.3em;
     padding: 10px 15%;
     cursor: pointer;
+}
+
+.DisabledLoginButton
+{
+    display: block;
+    margin: 0 auto;
+    transition-duration: 0.1s;
+    background-color: var(--NeglectedOptionColor);
+    color: var(--TextPrimaryColor);
+    border-color: var(--FundamentalSeconary);
+    border-radius: 20px;
+    border-width: 200%;
+    font-family: 'Menlo';
+    font-size: 1.3em;
+    padding: 10px 15%;
+    cursor: wait;
 }
