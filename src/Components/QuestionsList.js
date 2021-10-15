@@ -22,16 +22,18 @@ class QuestionsList extends Component
                 </div>
                 <ul className="QuestionsContainers">
                     {
-                        
+                        this.props.questions.map((ObjQuestion) =>
+                        {
+                            return <SelectableQuestionItem key={ObjQuestion.id} questionAuthor={this.props.users[ObjQuestion.author]} question={ObjQuestion}/>
+                        })
                     }
-                    <SelectableQuestionItem />
                 </ul>
             </div>
         );
     }
 }
 
-function MapStateToProps({Questions, ViewedTab, authenticatedUser})
+function MapStateToProps({Questions, ViewedTab, authenticatedUser, Users})
 {
     let QuestionsList = {};
     switch (ViewedTab)
@@ -41,7 +43,7 @@ function MapStateToProps({Questions, ViewedTab, authenticatedUser})
                 QuestionsList = Object.keys(Questions).filter((questionId) => 
                 {
                     return Questions[questionId].optionOne.votes.includes(authenticatedUser) || Questions[questionId].optionTwo.votes.includes(authenticatedUser);
-                }).map((questionId) => Questions[questionId]);
+                }).sort((questionId1, questionId2) => Questions[questionId1].timestamp - Questions[questionId2].timestamp).map((questionId) => Questions[questionId]);
                 break;
             }
         case viewingUnanswered:
@@ -49,12 +51,12 @@ function MapStateToProps({Questions, ViewedTab, authenticatedUser})
                 QuestionsList = Object.keys(Questions).filter((questionId) => 
                 {
                     return !Questions[questionId].optionOne.votes.includes(authenticatedUser) && !Questions[questionId].optionTwo.votes.includes(authenticatedUser);
-                }).map((questionId) => Questions[questionId]);
+                }).sort((questionId1, questionId2) => Questions[questionId1].timestamp - Questions[questionId2].timestamp).map((questionId) => Questions[questionId]);
                 break;
             }
         default:
     }
-    return {questions: QuestionsList};
+    return {questions: QuestionsList, users: Users};
 }
 
 export default connect(MapStateToProps)(QuestionsList);

@@ -5,16 +5,19 @@ class SelectableQuestionItem extends Component
 {
     render()
     {
+        let question = this.props.question;
+        let author = this.props.questionAuthor;
+        let QuestionTitle = question.optionOne.text + " OR " + question.optionTwo.text;
+
         return(
             <li>
                 <div className="QuestionCard">
                     <div className="AskerData">
-                        <img src="https://www.oniverse.xyz/imgs/Jupi.jpg" alt="" className="question-asker-pfp"/>
-                        <h3>Someone's Name</h3>
+                        <img src={author.avatarURL} alt="" className="question-asker-pfp"/>
+                        <h3>{author.name}</h3>
                     </div>
-
                     <div className="QuestionData">
-                        <h3>Question Title</h3>
+                        <h3>{QuestionTitle}</h3>
                         <button className="QuestionViewButton">View Poll</button>
                     </div>
                 </div>

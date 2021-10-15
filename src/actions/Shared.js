@@ -2,8 +2,6 @@ import { _getUsers, _getQuestions } from "../API/_DATA.js";
 import { receiveQuestions } from "./Questions";
 import { receiveUsers } from "./Users";
 
-const AUTHORIZE_AS = 'tylermcginnis'
-
 export function InitilizeData()
 {
     return (dispatch) => {
