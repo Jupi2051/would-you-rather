@@ -4,9 +4,17 @@ import "../Styles/AnswerableQuestion.css"
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import {FormatToDateTime} from "../Helpers";
+import { HandleAnsweringQuestion } from "../actions/Shared"
 
 class AnswerableQuestion extends Component
 {
+
+    handleSelection(Question, Option, alreadyAnswered)
+    {
+        if (!alreadyAnswered)
+            this.props.dispatch(HandleAnsweringQuestion(Question, Option));
+    }
+
     render()
     {
         const {author, question, answered} = this.props;
@@ -22,14 +30,16 @@ class AnswerableQuestion extends Component
                     </div>
                     
                     <div className="AnswersContainer">
-                        <div className={answered[0]? (answered[1] === "FirstChoice"? "SelectedOption" : "NeglectedOption") : "FirstChoice"}>
+                        <div className={answered[0]? (answered[1] === "FirstChoice"? "SelectedOption" : "NeglectedOption") : "FirstChoice"} onClick={() => this.handleSelection(question, "optionOne", answered[0])}>
                             <strong>
                                 {question.optionOne.text}
                                 {answered[0]? <Fragment><br/>{question.optionOne.votes.length / (question.optionOne.votes.length + question.optionTwo.votes.length) * 100}%</Fragment> : null}
                             </strong>
                         </div>
+
                         <h2 className="or-text">OR</h2>
-                        <div className={answered[0]? (answered[1] === "SecondChoice"? "SelectedOption" : "NeglectedOption") : "SecondChoice"}>
+
+                        <div className={answered[0]? (answered[1] === "SecondChoice"? "SelectedOption" : "NeglectedOption") : "SecondChoice"} onClick={() => this.handleSelection(question, "optionTwo", answered[0])}>
                             <strong>
                                 {question.optionTwo.text}
                                 {answered[0]? <Fragment><br/>{question.optionTwo.votes.length / (question.optionOne.votes.length + question.optionTwo.votes.length) * 100}%</Fragment> : null}

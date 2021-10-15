@@ -1,9 +1,10 @@
 import { _getUsers, _getQuestions } from "../API/_DATA.js";
 import { receiveQuestions } from "./Questions";
 import { receiveUsers } from "./Users";
-import {_saveQuestion} from "../API/_DATA";
-import { addQuestion } from "./Questions";
-import { AskQuestion } from "./Users"
+import { _saveQuestion, _saveQuestionAnswer } from "../API/_DATA";
+import { addQuestion, addVote } from "./Questions";
+import { AskQuestion, AnswerQuestion } from "./Users";
+import { voteViewedQuestion } from "./ViewQuestion.js";
 
 export function InitilizeData()
 {
@@ -16,7 +17,7 @@ export function InitilizeData()
     }
 }
 
-export function HandleMiddleAddingQuestion(FirstChoice, SecondChoice) // Middleware Act
+export function HandleMiddleAddingQuestion(FirstChoice, SecondChoice)
 {
     return (dispatch, getState) =>
     {
@@ -32,6 +33,27 @@ export function HandleMiddleAddingQuestion(FirstChoice, SecondChoice) // Middlew
             {
                 dispatch(addQuestion(question));
                 dispatch(AskQuestion(question, authenticatedUser));
+            })
+        }
+    }
+}
+
+export function HandleAnsweringQuestion(Question, Option)
+{
+    return (dispatch, getState) =>
+    {
+        const { authenticatedUser } = getState()
+        if (authenticatedUser !== null)
+        {
+            return _saveQuestionAnswer({
+                authedUser: authenticatedUser,
+                qid: Question.id,
+                answer: Option,
+            }).then(() => 
+            {
+                dispatch(addVote(Question, Option, authenticatedUser));
+                dispatch(voteViewedQuestion(Question, Option, authenticatedUser));
+                dispatch(AnswerQuestion(Question, Option, authenticatedUser));
             })
         }
     }

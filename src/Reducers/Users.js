@@ -1,5 +1,5 @@
 import { RECEIVED_USERS } from "../actions/Users";
-import { ASK_QUESTION } from "../actions/Users";
+import { ASK_QUESTION, ANSWER_QUESTION } from "../actions/Users";
 
 export default function Users(state = {}, action)
 {
@@ -19,6 +19,17 @@ export default function Users(state = {}, action)
                     ...state[action.userId],
                     questions: [...state[action.userId].questions, action.question.id]
                 }
+        }
+    }
+    else if (action.type === ANSWER_QUESTION)
+    {
+        return {
+            ...state,
+            [action.User]:
+            {
+                ...state[action.User],
+                answers: {...action.User.answers, [action.Question.id]: action.Option}
+            }
         }
     }
     else
