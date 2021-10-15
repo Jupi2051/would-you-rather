@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../Styles/NewQuestion.css"
 import { connect } from "react-redux"
 import { HandleMiddleAddingQuestion } from "../actions/Shared";
+import { Redirect } from "react-router-dom"
 
 class NewQuestion extends Component
 {
@@ -14,7 +15,8 @@ class NewQuestion extends Component
 
     state = {
         FirstChoice: "",
-        SecondChoice: ""
+        SecondChoice: "",
+        RedirectHome: false,
     }
 
     async OnSubmitQuestion(e)
@@ -23,8 +25,9 @@ class NewQuestion extends Component
         if (this.props.author !== null)
         {
             this.props.dispatch(HandleMiddleAddingQuestion(this.state.FirstChoice, this.state.SecondChoice))
-            console.log(this.props.questions);
-            // to do : switch to the other panel
+            this.setState({
+                RedirectHome: true
+            })
         }
     }
 
@@ -42,6 +45,9 @@ class NewQuestion extends Component
 
     render()
     {
+        if (this.state.RedirectHome)
+            return <Redirect to="/"/>
+        
         return(
             <div className="Center">
                 <h1>Create a new Poll</h1>
