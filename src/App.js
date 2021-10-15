@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { InitilizeData } from './actions/Shared';
 import LoginPanel from "./Components/LoginPanel";
@@ -23,16 +23,23 @@ class App extends Component
       <Router>
         <div>
             <Navigation />
-
             <p className="MainTitle">Would You Rather!</p>
-            {
-              <div>
-                <Route path="/" exact component={this.props.LoggedIn? QuestionsList : LoginPanel} />
-                <Route path="/questions/:question_id" component={AnswerableQuestion} />
-                <Route path="/add" component={NewQuestion} />
-                <Route path="/leaderboard" component={Leaderboard} />
-              </div>
-            }
+            <div>
+                {
+                this.props.LoggedIn? 
+                  <Fragment>
+                    <Route path="/" exact component={QuestionsList} />
+                    <Route path="/questions/:question_id" component={AnswerableQuestion} />
+                    <Route path="/add" component={NewQuestion} />
+                    <Route path="/leaderboard" component={Leaderboard} />
+                  </Fragment>
+                : 
+                  <Fragment>
+                    <LoginPanel />
+                  </Fragment>                
+                }
+
+            </div>
         </div>
       </Router>
     );

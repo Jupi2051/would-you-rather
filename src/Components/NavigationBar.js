@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import "../Styles/NavigationBar.css"
 import { Link } from "react-router-dom";
+import { connect } from "react-redux"
+import { authenticateUser } from "../actions/AuthedUser"
 
 class Navigation extends Component
 {
     render()
     {
         return(
-            <ul className="NavList">
+            this.props.LoggedIn
+            ?<ul className="NavList">
                 <Link to="/">
                     <li className="NavElement">
                         Home
@@ -23,12 +26,30 @@ class Navigation extends Component
                         Leaderboard
                     </li>
                 </Link>
-                <li className="NavLogButton">
-                    Log In
-                </li>
+                <Link to="/">
+                    <li className="NavLogButton" onClick={() => {this.props.dispatch(authenticateUser(null))}}>
+                        Log Out
+                    </li>
+                </Link>
+            </ul>
+            :<ul className="NavList">
+                    <li className="NavElement">
+                        Home
+                    </li>
+                    <li className="NavElement">
+                        New Poll
+                    </li>
+                    <li className="NavElement">
+                        Leaderboard
+                    </li>
             </ul>
         )
     }
 }
 
-export default Navigation;
+function StateMap({authenticatedUser})
+{
+    return {LoggedIn: authenticatedUser !== null}
+}
+
+export default connect(StateMap)(Navigation);
