@@ -19,6 +19,10 @@
     border-bottom-right-radius: 5%;
 }
 
+.QuestionsContainers h2 {
+    color: white
+}
+
 .TabButton
 {
     margin: 0%;
@@ -27,6 +31,26 @@
     transition-duration: 0.1s;
     background-color: var(--FundamentalPrimary);
     color: var(--TextPrimaryColor);
+    border-color: var(--FundamentalSeconary);
+    border-top-left-radius: 23px;
+    border-top-right-radius: 23px;
+    font-family: 'Ubuntu';
+    font-size: 1em;
+    cursor: pointer;
+    display: inline-flex;
+    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+}
+
+.TabButtonSelected
+{
+    margin: 0%;
+    padding-right: 10px;
+    padding-left: 10px;
+    transition-duration: 0.1s;
+    background-color: var(--FundamentalPrimary);
+    color: var(--SelectedOptionColor);
     border-color: var(--FundamentalSeconary);
     border-top-left-radius: 23px;
     border-top-right-radius: 23px;

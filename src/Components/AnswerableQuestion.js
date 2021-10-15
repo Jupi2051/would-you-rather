@@ -9,7 +9,7 @@ class AnswerableQuestion extends Component
 {
     render()
     {
-        const {author, question} = this.props;
+        const {author, question, answered} = this.props;
         return(
             <Fragment>
                 <div className="AnswerableQuestion">
@@ -20,16 +20,19 @@ class AnswerableQuestion extends Component
                             <h5>{FormatToDateTime(question.timestamp)}</h5>
                         </div>
                     </div>
+                    
                     <div className="AnswersContainer">
-                        <div className="FirstChoice">
+                        <div className={answered[0]? (answered[1] === "FirstChoice"? "SelectedOption" : "NeglectedOption") : "FirstChoice"}>
                             <strong>
                                 {question.optionOne.text}
+                                {answered[0]? <Fragment><br/>{question.optionOne.votes.length / (question.optionOne.votes.length + question.optionTwo.votes.length) * 100}%</Fragment> : null}
                             </strong>
                         </div>
                         <h2 className="or-text">OR</h2>
-                        <div className="SecondChoice">
+                        <div className={answered[0]? (answered[1] === "SecondChoice"? "SelectedOption" : "NeglectedOption") : "SecondChoice"}>
                             <strong>
                                 {question.optionTwo.text}
+                                {answered[0]? <Fragment><br/>{question.optionTwo.votes.length / (question.optionOne.votes.length + question.optionTwo.votes.length) * 100}%</Fragment> : null}
                             </strong>
                         </div>
                     </div>
@@ -42,12 +45,18 @@ class AnswerableQuestion extends Component
     }
 }
 
-function MapStateToProps({Users, ViewQuestion})
+function MapStateToProps({Users, ViewQuestion, authenticatedUser})
 {
     const QuestionAuthor = Object.values(Users).find((author) => author.id === ViewQuestion.author);
+    const Answered = [
+        ViewQuestion.optionOne.votes.includes(authenticatedUser) || ViewQuestion.optionTwo.votes.includes(authenticatedUser),
+        ViewQuestion.optionOne.votes.includes(authenticatedUser)? "FirstChoice" : "SecondChoice"
+    ]
+    // array structured as follows : [bool (Answered), string "FirstChoice or SecondChoice"]
     return {
         author: QuestionAuthor,
-        question: ViewQuestion
+        question: ViewQuestion,
+        answered: Answered
     };
 }
 

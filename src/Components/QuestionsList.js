@@ -17,12 +17,14 @@ class QuestionsList extends Component
         return(
             <div className="TabMain">
                 <div className="TabContainer">
-                    <button className="TabButton" onClick={(event) => {this.handleClick(event, viewingUnanswered)}}>Unanswered Questions</button>
-                    <button className="TabButton" onClick={(event) => {this.handleClick(event, viewingAnswered)}}>Answered Questions</button>
+                    <button className={this.props.viewing === viewingUnanswered? "TabButtonSelected" : "TabButton"} onClick={(event) => {this.handleClick(event, viewingUnanswered)}}>Unanswered Questions</button>
+                    <button className={this.props.viewing === viewingAnswered? "TabButtonSelected" : "TabButton"} onClick={(event) => {this.handleClick(event, viewingAnswered)}}>Answered Questions</button>
                 </div>
                 <ul className="QuestionsContainers">
                     {
-                        this.props.questions.map((ObjQuestion) =>
+                        this.props.questions.length === 0
+                        ?<h2>There Are no questions for you in this category !</h2>
+                        : this.props.questions.map((ObjQuestion) =>
                         {
                             return <SelectableQuestionItem key={ObjQuestion.id} questionAuthor={this.props.users[ObjQuestion.author]} question={ObjQuestion} ParentRef={this}/>
                         })
@@ -56,7 +58,7 @@ function MapStateToProps({Questions, ViewedTab, authenticatedUser, Users})
             }
         default:
     }
-    return {questions: QuestionsList, users: Users};
+    return {questions: QuestionsList, users: Users, viewing: ViewedTab};
 }
 
 export default connect(MapStateToProps)(QuestionsList);
