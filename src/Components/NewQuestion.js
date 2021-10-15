@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../Styles/NewQuestion.css"
 import { connect } from "react-redux"
-import { HandleMiddleAddingQuestion } from "../actions/Questions";
+import { HandleMiddleAddingQuestion } from "../actions/Shared";
 
 class NewQuestion extends Component
 {

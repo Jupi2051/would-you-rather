@@ -13,7 +13,7 @@ export default function Questions(state = {}, action)
     {
         return {
             ...state,
-            [action.Question.id]: action.Question
+            [action.Question.id]: action.Question,
         }
     }
     else
