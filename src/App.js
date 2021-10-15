@@ -1,23 +1,33 @@
 import './App.css';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { InitilizeData } from './actions/Shared';
 import NewQuestion from './Components/NewQuestion';
 import QuestionsList from "./Components/QuestionsList";
 import AnswerableQuestion from './Components/AnswerableQuestion';
 import Leaderboard from './Components/Leaderboard';
-import LoginPanel from "./Components/LoginPanel"
+import LoginPanel from "./Components/LoginPanel";
 
-function App()
+class App extends Component
 {
-  return (
-    <div>
-        <p className="MainTitle">Would You Rather!</p>
-
-        <LoginPanel />
-        <NewQuestion />
-        <AnswerableQuestion />
-        <Leaderboard />
-        <QuestionsList />
-    </div>
-  );
+  componentDidMount()
+  {
+    this.props.dispatch(InitilizeData());
+  }
+  
+  render()
+  { 
+    return (
+      <div>
+          <p className="MainTitle">Would You Rather!</p>
+          <LoginPanel />
+          <NewQuestion />
+          <AnswerableQuestion />
+          <Leaderboard />
+          <QuestionsList />
+      </div>
+    );
+  }
 }
 
-export default App;
+export default connect()(App);
