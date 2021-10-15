@@ -3,11 +3,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { InitilizeData } from './actions/Shared';
 import LoginPanel from "./Components/LoginPanel";
-//import QuestionsList from './Components/QuestionsList';
 import NewQuestion from "./Components/NewQuestion";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import AnswerableQuestion from './Components/AnswerableQuestion';
 import QuestionsList from './Components/QuestionsList';
+import Navigation from "./Components/NavigationBar";
+import Leaderboard from "./Components/Leaderboard";
 
 class App extends Component
 {
@@ -17,16 +18,19 @@ class App extends Component
   }
   
   render()
-  { 
+  {
     return (
       <Router>
         <div>
+            <Navigation />
+
             <p className="MainTitle">Would You Rather!</p>
             {
               <div>
                 <Route path="/" exact component={this.props.LoggedIn? QuestionsList : LoginPanel} />
                 <Route path="/questions/:question_id" component={AnswerableQuestion} />
                 <Route path="/add" component={NewQuestion} />
+                <Route path="/leaderboard" component={Leaderboard} />
               </div>
             }
         </div>

@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import LeaderboardItem from "./LeaderboardItem";
+import { connect } from "react-redux";
 
 class Leaderboard extends Component
 {
@@ -17,4 +18,9 @@ class Leaderboard extends Component
     }
 }
 
-export default Leaderboard;
+function MapStateToProps({Users, Questions})
+{
+    return {};
+}
+
+export default connect(MapStateToProps)(Leaderboard);

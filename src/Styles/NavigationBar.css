@@ -1,0 +1,55 @@
+.NavList
+{
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    overflow: hidden;
+    background: var(--FundamentalPrimary);
+    list-style-type: none;
+}
+
+.NavElement
+{
+    float: left;
+    display: block;
+    padding: 20px;
+    color: var(--TextPrimaryColor);
+    font-size: 1.2em;
+}
+
+.NavElement:hover
+{
+    transition-duration: 0.2s;
+    float: left;
+    display: block;
+    padding: 20px;
+    color: var(--TextPrimaryColor);
+    background: var(--FundamentalSeconary);
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.NavLogButton
+{
+    float: right;
+    display: block;
+    padding: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: var(--TextPrimaryColor);
+    font-size: 1.2em;
+}
+
+.NavLogButton:hover
+{
+    transition-duration: 0.2s;
+    float: right;
+    display: block;
+    padding: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--FundamentalSeconary);
+    cursor: pointer;
+    color: var(--TextPrimaryColor);
+    font-size: 1.2em;
+}
