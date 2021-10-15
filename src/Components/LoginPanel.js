@@ -20,8 +20,8 @@ class LoginPanel extends Component
                     if (this.state.submittedId !== "")
                         this.props.dispatch(authenticateUser(this.state.submittedId));
                 }}>
-                    <select name="userID" className="UserSelect" onChange={(e) => this.setState({submittedId: e.target.value})}>
-                        <option value="" disabled selected hidden>Select a Username</option>
+                    <select name="userID" className="UserSelect" defaultValue="Placeholder" onChange={(e) => this.setState({submittedId: e.target.value})}>
+                        <option value="Placeholder" disabled hidden>Select a Username</option>
                         {
                             this.props.userIds.map((id) =>
                                 <option key={id} value={id}>{this.props.users[id].name}</option>
