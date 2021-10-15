@@ -24,7 +24,7 @@ class QuestionsList extends Component
                     {
                         this.props.questions.map((ObjQuestion) =>
                         {
-                            return <SelectableQuestionItem key={ObjQuestion.id} questionAuthor={this.props.users[ObjQuestion.author]} question={ObjQuestion}/>
+                            return <SelectableQuestionItem key={ObjQuestion.id} questionAuthor={this.props.users[ObjQuestion.author]} question={ObjQuestion} ParentRef={this}/>
                         })
                     }
                 </ul>
@@ -43,7 +43,7 @@ function MapStateToProps({Questions, ViewedTab, authenticatedUser, Users})
                 QuestionsList = Object.keys(Questions).filter((questionId) => 
                 {
                     return Questions[questionId].optionOne.votes.includes(authenticatedUser) || Questions[questionId].optionTwo.votes.includes(authenticatedUser);
-                }).sort((questionId1, questionId2) => Questions[questionId1].timestamp - Questions[questionId2].timestamp).map((questionId) => Questions[questionId]);
+                }).sort((questionId1, questionId2) => Questions[questionId2].timestamp - Questions[questionId1].timestamp).map((questionId) => Questions[questionId]);
                 break;
             }
         case viewingUnanswered:
@@ -51,7 +51,7 @@ function MapStateToProps({Questions, ViewedTab, authenticatedUser, Users})
                 QuestionsList = Object.keys(Questions).filter((questionId) => 
                 {
                     return !Questions[questionId].optionOne.votes.includes(authenticatedUser) && !Questions[questionId].optionTwo.votes.includes(authenticatedUser);
-                }).sort((questionId1, questionId2) => Questions[questionId1].timestamp - Questions[questionId2].timestamp).map((questionId) => Questions[questionId]);
+                }).sort((questionId1, questionId2) => Questions[questionId2].timestamp - Questions[questionId1].timestamp).map((questionId) => Questions[questionId]);
                 break;
             }
         default:

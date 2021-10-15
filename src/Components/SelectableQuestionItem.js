@@ -1,8 +1,15 @@
 import React, { Component } from "react";
-import "../Styles/SelectableQuestionItem.css"
+import "../Styles/SelectableQuestionItem.css";
+import { Link } from "react-router-dom";
+import { viewQuestion } from "../actions/ViewQuestion"
 
 class SelectableQuestionItem extends Component
 {
+    HandleViewPoll(Question, List)
+    {
+        List.props.dispatch(viewQuestion(Question));
+    }
+
     render()
     {
         let question = this.props.question;
@@ -18,7 +25,9 @@ class SelectableQuestionItem extends Component
                     </div>
                     <div className="QuestionData">
                         <h3>{QuestionTitle}</h3>
-                        <button className="QuestionViewButton">View Poll</button>
+                        <Link to={`/questions/${question.id}`}>
+                            <button className="QuestionViewButton" onClick={() => this.HandleViewPoll(question, this.props.ParentRef)}>View Poll</button>
+                        </Link>
                     </div>
                 </div>
             </li>

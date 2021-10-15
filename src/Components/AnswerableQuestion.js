@@ -1,39 +1,54 @@
 import React, { Component } from "react";
 import { Fragment } from "react";
 import "../Styles/AnswerableQuestion.css"
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import {FormatToDateTime} from "../Helpers";
 
 class AnswerableQuestion extends Component
 {
     render()
     {
+        const {author, question} = this.props;
         return(
             <Fragment>
                 <div className="AnswerableQuestion">
                     <div className="QuestionInfoContainer">                        
-                        <img src="https://www.oniverse.xyz/imgs/Jupi.jpg" alt="" className="question-asker-pfp-on-answer"/>
+                        <img src={author.avatarURL} alt="" className="question-asker-pfp-on-answer"/>
                         <div className="QuestionTextDataContainer">
-                            <h2 className="QuestionWriterName">Sarah Edo owa owa</h2>
-                            <h5>2021/10/14 1:23 PM</h5>
+                            <h2 className="QuestionWriterName">{author.name}</h2>
+                            <h5>{FormatToDateTime(question.timestamp)}</h5>
                         </div>
                     </div>
                     <div className="AnswersContainer">
                         <div className="FirstChoice">
                             <strong>
-                                First
+                                {question.optionOne.text}
                             </strong>
                         </div>
                         <h2 className="or-text">OR</h2>
                         <div className="SecondChoice">
                             <strong>
-                                Second
+                                {question.optionTwo.text}
                             </strong>
                         </div>
                     </div>
                 </div>
-                <button className="AnswerableQuestionButton">Back</button>
+                <Link to="/">
+                    <button className="AnswerableQuestionButton">Back</button>
+                </Link>
             </Fragment>
         );
     }
 }
 
-export default AnswerableQuestion;
+function MapStateToProps({Users, ViewQuestion})
+{
+    const QuestionAuthor = Object.values(Users).find((author) => author.id === ViewQuestion.author);
+    return {
+        author: QuestionAuthor,
+        question: ViewQuestion
+    };
+}
+
+export default connect(MapStateToProps)(AnswerableQuestion);

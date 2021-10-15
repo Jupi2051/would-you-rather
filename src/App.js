@@ -4,7 +4,10 @@ import { connect } from "react-redux";
 import { InitilizeData } from './actions/Shared';
 import LoginPanel from "./Components/LoginPanel";
 //import QuestionsList from './Components/QuestionsList';
-import NewQuestion from "./Components/NewQuestion"
+import NewQuestion from "./Components/NewQuestion";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import AnswerableQuestion from './Components/AnswerableQuestion';
+import QuestionsList from './Components/QuestionsList';
 
 class App extends Component
 {
@@ -16,15 +19,18 @@ class App extends Component
   render()
   { 
     return (
-      <div>
-          <p className="MainTitle">Would You Rather!</p>
-          {
-            console.log(this.props.LoggedIn)
-          }
-          {
-            (this.props.LoggedIn && <NewQuestion />) || <LoginPanel />
-          }
-      </div>
+      <Router>
+        <div>
+            <p className="MainTitle">Would You Rather!</p>
+            {
+              <div>
+                <Route path="/" exact component={this.props.LoggedIn? QuestionsList : LoginPanel} />
+                <Route path="/questions/:question_id" component={AnswerableQuestion} />
+                <Route path="/add" component={NewQuestion} />
+              </div>
+            }
+        </div>
+      </Router>
     );
   }
 }
