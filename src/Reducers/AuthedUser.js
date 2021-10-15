@@ -1,6 +1,6 @@
 import { AUTHENTICATE_USER } from "../actions/AuthedUser";
 
-export default function authenticateReducer(state = null, action)
+export default function authenticatedUser(state = null, action)
 {
     if (action === AUTHENTICATE_USER)
     {

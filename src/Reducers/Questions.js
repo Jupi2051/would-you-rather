@@ -1,6 +1,6 @@
 import { RECEIVED_QUESTIONS } from "../actions/Questions";
 
-export default function questionsReducer(state = {}, action)
+export default function Questions(state = {}, action)
 {
     if (action === RECEIVED_QUESTIONS)
     {
