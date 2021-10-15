@@ -3,7 +3,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { InitilizeData } from './actions/Shared';
 import LoginPanel from "./Components/LoginPanel";
-import QuestionsList from './Components/QuestionsList';
+//import QuestionsList from './Components/QuestionsList';
+import NewQuestion from "./Components/NewQuestion"
 
 class App extends Component
 {
@@ -21,7 +22,7 @@ class App extends Component
             console.log(this.props.LoggedIn)
           }
           {
-            (this.props.LoggedIn && <QuestionsList />) || <LoginPanel />
+            (this.props.LoggedIn && <NewQuestion />) || <LoginPanel />
           }
       </div>
     );

@@ -1,4 +1,4 @@
-import { RECEIVED_QUESTIONS } from "../actions/Questions";
+import { RECEIVED_QUESTIONS, ADD_QUESTION } from "../actions/Questions";
 
 export default function Questions(state = {}, action)
 {
@@ -7,6 +7,13 @@ export default function Questions(state = {}, action)
         return {
             ...state,
             ...action.Questions
+        }
+    }
+    else if (action.type === ADD_QUESTION)
+    {
+        return {
+            ...state,
+            [action.Question.id]: action.Question
         }
     }
     else
