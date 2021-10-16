@@ -65,8 +65,9 @@ class AnswerableQuestion extends Component
     }
 }
 
-function MapStateToProps({Users, ViewQuestion, authenticatedUser})
+function MapStateToProps({Users, ViewQuestion, authenticatedUser, Questions}, { match }) // sorry for the inconvince i didn't even know about the existence of match until you showed me :) thanks a lot mr reviewer!
 {
+    ViewQuestion = Questions[match.params.question_id]
     if (ViewQuestion)
     {
         const QuestionAuthor = Object.values(Users).find((author) => author.id === ViewQuestion.author);
