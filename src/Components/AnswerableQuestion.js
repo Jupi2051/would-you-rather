@@ -36,7 +36,8 @@ class AnswerableQuestion extends Component
                             <div className={answered[0]? (answered[1] === "FirstChoice"? "SelectedOption" : "NeglectedOption") : "FirstChoice"} onClick={() => this.handleSelection(question, "optionOne", answered[0])}>
                                 <strong>
                                     {question.optionOne.text}
-                                    {answered[0]? <Fragment><br/>{question.optionOne.votes.length / (question.optionOne.votes.length + question.optionTwo.votes.length) * 100}%</Fragment> : null}
+                                    {answered[0]? <Fragment><br/>{question.optionOne.votes.length + " voted"}</Fragment> : null}
+                                    {answered[0]? <Fragment><br/>{(question.optionOne.votes.length / (question.optionOne.votes.length + question.optionTwo.votes.length) * 100).toFixed(1)}%</Fragment> : null}
                                 </strong>
                             </div>
 
@@ -45,7 +46,8 @@ class AnswerableQuestion extends Component
                             <div className={answered[0]? (answered[1] === "SecondChoice"? "SelectedOption" : "NeglectedOption") : "SecondChoice"} onClick={() => this.handleSelection(question, "optionTwo", answered[0])}>
                                 <strong>
                                     {question.optionTwo.text}
-                                    {answered[0]? <Fragment><br/>{question.optionTwo.votes.length / (question.optionOne.votes.length + question.optionTwo.votes.length) * 100}%</Fragment> : null}
+                                    {answered[0]? <Fragment><br/>{question.optionTwo.votes.length + " voted"}</Fragment> : null}
+                                    {answered[0]? <Fragment><br/>{(question.optionTwo.votes.length / (question.optionOne.votes.length + question.optionTwo.votes.length) * 100).toFixed(1)}%</Fragment> : null}
                                 </strong>
                             </div>
                         </div>
