@@ -26,11 +26,9 @@ class Navigation extends Component
                         Leaderboard
                     </li>
                 </Link>
-                <Link to="/">
-                    <li className="NavElement" onClick={() => {this.props.dispatch(authenticateUser(null))}}>
-                        Log Out
-                    </li>
-                </Link>
+                <li className="NavElement" onClick={() => {this.props.dispatch(authenticateUser(null))}}>
+                     Log Out
+                </li>
                     <li classname="NavUserData">
                         <div className="CurrentUserContainer">
                             <h3 className="CurrentUserName">{this.props.CurrentUser.name}</h3>
