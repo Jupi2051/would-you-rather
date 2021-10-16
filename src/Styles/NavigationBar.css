@@ -61,7 +61,6 @@
     height: 50px;
     border-radius: 100%;
     margin: 0%;
-    border: green 2px solid;
 }
 
 .CurrentUserName
@@ -71,12 +70,10 @@
     padding-left: 1%;
     margin: 0.5%;
     float:right;
-    border: blue 2px solid;
 }
 
 .CurrentUserContainer
 {
-    border: var(--FirstOptionInternal) 5px solid;
     border-top-left-radius: 15%;
     border-bottom-right-radius: 15%;
     border-top-right-radius: 20%;
