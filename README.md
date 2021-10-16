@@ -12,15 +12,12 @@ cd would-you-rather
 npm install
 npm install --global yarn
 ```
-
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
 # starting up
-Install the dependencies and devDependencies and start the server.
-
+Use this command in the Directory of the project to start up the server.
 ```sh
 yarn start
 ```
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 # Developer Contact
 ##### Project was developed by Jupi from structure to styling to functionality!
