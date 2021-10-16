@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import {FormatToDateTime} from "../Helpers";
 import { HandleAnsweringQuestion } from "../actions/Shared"
-import { Redirect } from "react-router-dom"
+import NotFound from "../Components/404";
 
 class AnswerableQuestion extends Component
 {
@@ -18,8 +18,8 @@ class AnswerableQuestion extends Component
 
     render()
     {
-        const {author, question, answered, redirectToMainPage} = this.props;
-        if (!redirectToMainPage)
+        const {author, question, answered, NotFoundPage} = this.props;
+        if (!NotFoundPage)
         {
             return(
                 <Fragment>
@@ -60,7 +60,7 @@ class AnswerableQuestion extends Component
         }
         else
         {
-            return <Redirect to="/"/>;
+            return <NotFound />
         }
     }
 }
@@ -82,7 +82,7 @@ function MapStateToProps({Users, ViewQuestion, authenticatedUser})
         };
     }
     else
-        return {redirectToMainPage: true}
+        return {NotFoundPage: true}
 }
 
 export default connect(MapStateToProps)(AnswerableQuestion);
