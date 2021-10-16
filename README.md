@@ -24,6 +24,7 @@ yarn start
 
 # Developer Contact
 ##### Project was developed by Jupi from structure to styling to functionality!
+* Email: spacejupiter0@gmail.com
 * [Github](https://github.com/Jupi2051/)
 * [Discord](https://discord.gg/rins)
 * [Personal Website](https://oniverse.xyz/)
