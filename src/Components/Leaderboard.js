@@ -38,8 +38,8 @@ function MapStateToProps({Users, Questions})
             Answered: Object.keys(Users[UserID].answers).length,
             Asked: Users[UserID].questions.length
         })
-    ).sort((user1, user2) => (user1.Answered + user1.Asked) < (user2.Answered + user2.Asked)).slice(0, 3);
-    
+    ).sort((user1, user2) => (user2.Answered + user2.Asked) - (user1.Answered + user1.Asked)).slice(0, 3);
+
     return {topUsers: TopUsers};
 }
 
