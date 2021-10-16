@@ -27,10 +27,16 @@ class Navigation extends Component
                     </li>
                 </Link>
                 <Link to="/">
-                    <li className="NavLogButton" onClick={() => {this.props.dispatch(authenticateUser(null))}}>
+                    <li className="NavElement" onClick={() => {this.props.dispatch(authenticateUser(null))}}>
                         Log Out
                     </li>
                 </Link>
+                    <li classname="NavUserData">
+                        <div className="CurrentUserContainer">
+                            <h3 className="CurrentUserName">{this.props.CurrentUser.name}</h3>
+                            <img src={this.props.CurrentUser.avatarURL} alt="" className="CurrentUserPFP"/>
+                        </div>
+                    </li>
             </ul>
             :<ul className="NavList">
                     <li className="NavElement">
@@ -47,9 +53,9 @@ class Navigation extends Component
     }
 }
 
-function StateMap({authenticatedUser})
+function StateMap({authenticatedUser, Users})
 {
-    return {LoggedIn: authenticatedUser !== null}
+    return {LoggedIn: authenticatedUser !== null, CurrentUser: Users[authenticatedUser]}
 }
 
 export default connect(StateMap)(Navigation);
